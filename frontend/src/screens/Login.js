@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 function Login() {
 
     const navigate=useNavigate()
+    const [error,setError]=useState("")
 
     const [credentials,setCredentials]=useState({
         email:"",
@@ -19,7 +20,8 @@ function Login() {
     const handleLoginSubmit= async(e)=>{
         e.preventDefault();
 
-        const response=await fetch("http://localhost:5000/api/authenticateuser",{
+        try {
+            const response=await fetch("http://localhost:5000/api/authenticateuser",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
@@ -27,17 +29,21 @@ function Login() {
                 password:credentials.password,
             })
         })
-
         const json=await response.json()
-
-        if(json.message!=="Success"){
-            alert(json.message)
-        }
-        else{
+        
+        if(response.ok){
             localStorage.setItem("authToken",json.authToken)
             navigate("/")
         }
 
+        else{
+            setError(json.message)
+        }
+
+        } catch (error) {
+            setError("Sorry! Server is down 🥺")
+        }
+        
 
 
     }
@@ -51,9 +57,14 @@ function Login() {
             <h1>Todo Champion - Login</h1>
             </div>
             <form onSubmit={handleLoginSubmit}>
-            <input name='email' type="text" placeholder='Email' value={credentials.email} onChange={handleOnChange}/>
-            <input name='password' type="text" placeholder='Password' value={credentials.password} onChange={handleOnChange}/>
+            <input required name='email' type="text" placeholder='Email' value={credentials.email} onChange={handleOnChange}/>
+            <input required  name='password' type="text" placeholder='Password' value={credentials.password} onChange={handleOnChange}/>
             <button>Login</button>
+            {
+                error.length!==0?(
+                    <button onClick={()=>setError("")}>{error}</button>
+                ):('')
+            }
             </form>
             <p><Link id='login-link' to='/signup'>Create A New Account</Link></p>
 

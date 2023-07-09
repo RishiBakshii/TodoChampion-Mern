@@ -5,6 +5,7 @@ import Login from './screens/Login'
 import Signup from './screens/Signup'
 import About from './screens/About'
 import Community from './screens/Community'
+import './App.css'
 
 function App() {
   return (

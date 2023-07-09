@@ -3,23 +3,23 @@ import './css/Navbar.css'
 import './css/responsiveNavbar.css'
 import { Link } from 'react-router-dom'
 
-function Navbar({handleLogout}) {
+function Navbar({handleLogout,username}) {
 
-  window.onscroll=()=>{
-    setNavOpen(false)
-  }
-  const [navOpen,setNavOpen]=useState(false)
+  // window.onscroll=()=>{
+  //   setNavOpen(false)
+  // }
+  // const [navOpen,setNavOpen]=useState(true)
 
-  const toggleNavbar=()=>{
-    setNavOpen(()=>!navOpen)
-  }
+  // const toggleNavbar=()=>{
+  //   setNavOpen(()=>!navOpen)
+  // }
 
   return (
     <header className="header">
-        <h1 className="brandname">Todo Champion</h1>
-        <i onClick={toggleNavbar} id='menuIcon' className='bx bx-menu'></i>
+        <h1 className="brandname">Todo Champion - <Link to='/userprofile' style={{"textDecoration":"none",color:"var(--text-color)"}}>{username}</Link></h1>
+        <i id='menuIcon' className='bx bx-menu'></i>
         <nav className="nav">
-            <ul style={{visibility:navOpen?"visible":"hidden"}} className="navbar">
+            <ul className="navbar">
                 <li className="nav-items"><Link id='links' to="/">Home</Link></li>
                 <li className="nav-items"><Link id='links' to="/about">About</Link></li>
                 <li className="nav-items"><Link id='links' to='/community'>Community</Link></li>

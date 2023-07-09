@@ -112,13 +112,14 @@ function Home() {
 
   return (
     <>
-      <Navbar handleLogout={handleLogout} />
+      <Navbar handleLogout={handleLogout} username={loggedInUser.name} />
       <div className="container">
+        <h1>{` ${todos.length!==0?(`${loggedInUser.name}, here are your todos`):(`Hey ${loggedInUser.name} you have no todos☹️`)}`}</h1>
         <div className="todo-container">
                   {todos.length=== 0 ? (
-          <h1>Hey {loggedInUser.name}, You have no Todos!🥲<br /></h1>
+          ""
         ) : (
-
+          
           todos.map((todo) => {
             return (
               <div key={todo._id} className={`todos`} onClick={(e)=>toggleCompleteTodo(e,loggedInUser._id,todo._id)}>
@@ -133,9 +134,6 @@ function Home() {
         </div>
 
 
-        <div className="addTodo" onClick={() => setpopupModal(true)}>
-          <p>+</p>
-        </div>
 
         {popupModal ? (
           <div className="popupModal">
@@ -155,6 +153,9 @@ function Home() {
           ""
         )}
       </div>
+      <div className="addTodo" onClick={() => setpopupModal(true)}>
+          <p>+</p>
+        </div>
     </>
   );
 }

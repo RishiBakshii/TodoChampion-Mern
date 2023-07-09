@@ -4,7 +4,8 @@ const MONGO_URI=process.env.MONGO_URI
 
 const connectToMongoDB=async()=>{
 
-    await mongoose.connect(MONGO_URI,{
+    try {
+        await mongoose.connect(MONGO_URI,{
         useNewUrlParser:true,
         useUnifiedTopology:true
     })
@@ -14,6 +15,13 @@ const connectToMongoDB=async()=>{
     const todosData=await todosCollection.find({}).toArray()
 
     console.log("Connected with mongodb")
+    
+    } catch (error) {
+
+        console.log("Error connecting with the database")
+
+    }
+    
 
 }
 

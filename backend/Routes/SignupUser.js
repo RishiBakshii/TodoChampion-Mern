@@ -6,15 +6,15 @@ const bcrypt=require("bcrypt")
 
 
 router.post("/createnewuser",[
-    body("name").isLength({min:5}),
-    body("email").isEmail(),
-    body("password").isLength({min:5})
+    body("name","username must be 5 characters long").isLength({min:5}),
+    body("email","Invalid Email").isEmail(),
+    body("password","Password must be 5 characters Long").isLength({min:5})
 ],async(req,res)=>{
 
     const errors=validationResult(req)
 
     if(!errors.isEmpty()){
-        return res.json({errors:errors.array()});
+        return res.status(400).json({"errors":errors.array()});
     }
 
     
@@ -31,18 +31,14 @@ router.post("/createnewuser",[
     })
 
     createdUser.save()
-    res.json({"createdNewUser":true})
+    return res.status(200).json({"createdNewUser":true})
 
 
-    } catch (error) {
-        res.json({"createdNewUser":false})
-        console.log("Error creating a new user! \n Error at $$ SignupUser.js route")
+    } catch (errors) {
+        alert("Error creating a new User!")
+        return res.status(400).json({"errors":errors})
     }
     
-    
-
-
-
 })
 
 module.exports=router

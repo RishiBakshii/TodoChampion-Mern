@@ -13,25 +13,25 @@
 
 .container {
   overflow-y: scroll;
-  margin-top: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   flex-direction: column;
   color: var(--text-color);
   padding: 0;
   z-index: 0;
+  height: 80vh;
 }
 
-.container::-webkit-scrollbar {
-  width: 0.2rem;
+.container h1{
+  margin-top: 6rem;
 }
 
 .todo-container{
   padding: 2rem;
-  height: 50rem;
+  height: 800px;
   overflow-y: scroll;
+  /* background-color: yellow; */
 }
 
 .todo-container::-webkit-scrollbar{

@@ -5,7 +5,6 @@ const app=express()
 require("dotenv").config()
 const port=process.env.PORT
 const TODO=require("./models/Todo")
-global.jwtSecret="Mynameisrishibakshiandiamadatascientist$#"
 const path=require("path")
 
 app.use(express.json())
@@ -23,6 +22,7 @@ app.use("/api",require("./Routes/ToggleComplete"))
 app.use("/api",require("./Routes/LoginUser"))
 app.use("/api",require("./Routes/SignupUser"))
 app.use("/api",require("./Routes/GetUserDetails"))
+app.use("/api",require("./Routes/GetAllUserData"))
 
 
 // static files - configuration steps
