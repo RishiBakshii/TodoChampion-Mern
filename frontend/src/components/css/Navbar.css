@@ -1,0 +1,33 @@
+.header{
+    background-color: var(--secondary-background);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    height: 8rem;
+}
+
+#menuIcon{
+    font-size: 3rem;
+    display: none;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-items{
+    margin:0 1.3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.navbar #links{
+    color: var(--text-color);
+    text-decoration: none;
+}
+

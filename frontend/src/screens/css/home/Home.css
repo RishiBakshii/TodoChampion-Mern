@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-background: rgb(109, 67, 146);
+  --secondary-background: rgb(52, 11, 71);
+  --text-color: white;
+}
+
+.container {
+  overflow-y: scroll;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  color: var(--text-color);
+  padding: 0;
+  z-index: 0;
+}
+
+.container::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.todo-container{
+  padding: 2rem;
+  height: 50rem;
+  overflow-y: scroll;
+}
+
+.todo-container::-webkit-scrollbar{
+  width: .2rem;
+}
+
+.todos {
+  background-color: var(--secondary-background);
+  width: 60rem;
+  border-radius: 0.8rem;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.todos .todo-text {
+  height: 100%;
+  width: 85%;
+  word-wrap: break-word;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.todo-text::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.action-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-container p {
+  cursor: pointer;
+}
+
+.addTodo {
+  background-color: var(--secondary-background);
+  font-size: 3rem;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  position: absolute;
+  right: 4rem;
+  bottom: 4rem;
+  color: var(--text-color);
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20%;
+  box-shadow: 0 0 1rem 1px rgba(0, 0, 0, 0.2);
+}
+
+.popupModal {
+  background-color: white;
+  width: 40rem;
+  height: 20rem;
+  position: absolute;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1rem 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupModal .crossIcon {
+  font-size: 1.1rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.popupModal .crossIcon:hover {
+  filter: invert(1);
+}
+
+.popupModal h4 {
+  font-size: 1.3rem;
+}
+
+.popupModal .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content input {
+  padding: 1.1rem;
+  width: 80%;
+  font-size: 1.1rem;
+  border: 1px solid var(--secondary-background);
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  outline: none;
+}
+.content button {
+  padding: 1rem 0;
+  width: 60%;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  background-color: var(--secondary-background);
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  transition: 0.4s;
+}
+
+.content form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content button:hover {
+  background-color: var(--primary-background);
+}
+
+.completed {
+  text-decoration: line-through;
+  /* background-color: rgb(108, 57, 108); */
+}

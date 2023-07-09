@@ -1,0 +1,35 @@
+.main{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    color: white;
+    flex-direction: column;
+}
+
+body{
+    background-color: var(--primary-background);
+}
+
+.about-card{
+    background-color: var(--secondary-background);
+    padding: 2rem;
+    width: 90%;
+    border-radius: .6rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 1rem 0rem;
+}
+
+.about-card h1{
+    font-size: 2rem;
+}
+
+.about-card p{
+    margin: 1rem 0rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}

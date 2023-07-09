@@ -1,0 +1,64 @@
+.signup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-background);
+    flex-direction: column;
+}
+
+.signup-container .box{
+    color:white;
+    background-color: var(--secondary-background);
+    width: 50rem;
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: .8rem;
+    box-shadow: 0 0 1rem 1px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container .box p{
+    font-size: 1.1rem;
+}
+
+#login-link{
+    text-decoration: none;
+    color: inherit;
+}
+
+.signup-container h1{
+    color: var(--text-color);
+}
+
+.signup-container form{
+    margin: 1rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.signup-container input,button{
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    width: 60%;
+    border-radius: .4rem;
+    border: 1px solid var(--primary-background);
+    background-color: var(--secondary-background);
+    color:var(--text-color);
+    outline: none;
+}
+
+.signup-container button{
+    background-color: var(--primary-background);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: .4s;
+    border: none;
+}

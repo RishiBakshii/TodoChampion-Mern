@@ -1,0 +1,23 @@
+@media (max-width:1340px) {
+
+    .todos{
+        width: 70vw;
+    }
+    
+}
+@media (max-width:890px) {
+
+    .popupModal{
+        width: 70vw;
+    }
+    
+}
+@media (max-width:644px) {
+    html{
+      font-size: .8rem;  
+    }
+    .popupModal{
+        width: 70vw;
+    }
+    
+}

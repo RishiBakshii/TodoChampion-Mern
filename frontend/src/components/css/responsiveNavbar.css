@@ -1,0 +1,28 @@
+@media (max-width:900px) {
+
+
+    .navbar{
+        flex-direction: column;
+        background-color: var(--secondary-background);
+        position: fixed;
+        right: 0;
+        top: 8rem;
+        height: 100vh;
+        align-items: center;
+        justify-content: flex-start;
+        z-index: 1;
+        padding: 2rem;
+    }
+
+    .nav-items{
+        margin: 3rem;
+        font-size: 1.3rem;
+    }
+
+    #menuIcon{
+        display: block;
+        position: absolute;
+        right: 2rem;
+    }
+
+}

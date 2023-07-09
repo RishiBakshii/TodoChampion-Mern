@@ -1,0 +1,24 @@
+@media (max-width:900px) {
+
+    .signup-container .box{
+        width: 90vw;
+    }
+    
+}
+@media (max-width:500px) {
+
+    .signup-container input, button{
+        width: 80%;
+    }
+
+    .signup-container h1{
+        font-size: 6vw;
+    }
+    
+}
+@media (max-width:380px) {
+
+    .signup-container h1{
+        font-size: 1.9rem;
+    }
+}
