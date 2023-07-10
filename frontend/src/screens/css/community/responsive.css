@@ -1,0 +1,28 @@
+@media (max-width:1542px) {
+
+    .community-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+}
+@media (max-width:1050px) {
+
+    .community-grid{
+        width: 100%;
+    }
+    
+}
+@media (max-width:890px) {
+
+    .community-grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    
+}
+@media (max-width:428px) {
+
+    .profile-card{
+        width: 90%;
+    }
+    
+}

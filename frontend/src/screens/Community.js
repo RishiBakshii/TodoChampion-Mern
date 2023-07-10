@@ -1,26 +1,66 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import './css/community/community.css'
+import './css/community/responsive.css'
 
 function Community() {
+
+
+  const [userdata,setUserData]=useState([])
+
+  const getAllUserData=async()=>{
+
+    try {
+      const response= await fetch("http://localhost:5000/api/getalluserdata")
+
+      if(response.ok){
+        const alluserdata=await response.json()
+        setUserData(alluserdata)
+      }
+
+      else{
+        alert("Error fetching the data from server")
+      }
+
+    } catch (error) {
+      alert("Sorry server is down!😮")
+    }
+
+
+
+  }
+
+
+  useEffect(()=>{
+
+    getAllUserData()
+
+  },[])
+
+
   return (
     <>
     <Navbar/>
 
     <div className="community-grid">
-
-      <div className="profile-card">
+      {
+        userdata.map((user)=>{
+          return  <div className="profile-card">
 
         <div className="profile-image-contanier">
-          <img src="data:image/jpeg;base64,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" alt="" />
+          <img src={user.image} alt="" />
         </div>
 
         <div className="user-details-box">
-          <p>RishiBakshi</p>
-          <p>Ghaziabad</p>
+          <h2>{user.name}</h2>
+          <p>{user.location}</p>
+          <p>Active Todos - {user.todos.length}</p>
         </div>
 
       </div>
+        })
+      }
+     
 
 
     </div>

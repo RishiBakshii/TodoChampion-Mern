@@ -4,6 +4,10 @@ const {Schema}=mongoose
 
 
 const userSchema=new Schema({
+    image:{
+        type:String,
+        required:true
+    },
     name:{
         type:String,
         required:true,

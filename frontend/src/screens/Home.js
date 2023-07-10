@@ -105,14 +105,9 @@ function Home() {
 
   }
 
-  const handleLogout=()=>{
-    localStorage.clear()
-    navigate("/login")
-  }
-
   return (
     <>
-      <Navbar handleLogout={handleLogout} username={loggedInUser.name} />
+      <Navbar username={loggedInUser.name} />
       <div className="container">
         <h1>{` ${todos.length!==0?(`${loggedInUser.name}, here are your todos`):(`Hey ${loggedInUser.name} you have no todos☹️`)}`}</h1>
         <div className="todo-container">

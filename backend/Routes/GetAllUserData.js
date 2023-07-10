@@ -14,7 +14,7 @@ router.get("/getalluserdata",async(req,res)=>{
         return res.status(200).json(allData)
 
     } catch (error) {
-        return res.status(400).json({"message":"Sorry all the user data is not availabe at the moment☹️"})
+        return res.status(400).json({"message":"Sorry all user data is not availabe at the moment☹️"})
     }
 
 
