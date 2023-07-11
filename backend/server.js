@@ -3,7 +3,7 @@ const cors=require("cors")
 const connectToMongoDB=require("./mongoDB")
 const app=express()
 require("dotenv").config()
-const port=process.env.PORT
+const port=process.env.PORT || 6010
 const TODO=require("./models/Todo")
 const path=require("path")
 
